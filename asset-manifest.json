@@ -1,16 +1,15 @@
 {
   "files": {
     "main.css": "/dowjones-assignment/static/css/main.073c9b0a.css",
-    "main.js": "/dowjones-assignment/static/js/main.30bf01b3.js",
+    "main.js": "/dowjones-assignment/static/js/main.c944cfb2.js",
     "static/js/787.0589973e.chunk.js": "/dowjones-assignment/static/js/787.0589973e.chunk.js",
-    "static/media/logo.svg": "/dowjones-assignment/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/dowjones-assignment/index.html",
     "main.073c9b0a.css.map": "/dowjones-assignment/static/css/main.073c9b0a.css.map",
-    "main.30bf01b3.js.map": "/dowjones-assignment/static/js/main.30bf01b3.js.map",
+    "main.c944cfb2.js.map": "/dowjones-assignment/static/js/main.c944cfb2.js.map",
     "787.0589973e.chunk.js.map": "/dowjones-assignment/static/js/787.0589973e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.30bf01b3.js"
+    "static/js/main.c944cfb2.js"
   ]
 }
