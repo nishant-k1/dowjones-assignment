@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/721.2a747104.chunk.js","mappings":"qIAMA,UAJmB,WACjB,OAAO","sources":["views/pages/UpdatePost/index.js"],"sourcesContent":["import React from 'react';\n\nconst UpdatePost = () => {\n  return <div>index</div>;\n};\n\nexport default UpdatePost;\n"],"names":[],"sourceRoot":""}
