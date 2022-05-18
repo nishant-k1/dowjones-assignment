@@ -24,6 +24,15 @@ export const postsReducer = (state = initialState, { type, payload }) => {
         retrievedPostList: [...payload],
       };
     }
+
+    case RETRIEVE_POST_BY_ID: {
+      return {
+        ...state,
+        loading: true,
+        retrievedPostById: { ...payload },
+      };
+    }
+
     default:
       return {
         ...state,

@@ -6,16 +6,13 @@ import {
   DELETE_POST,
 } from './types';
 
-import { retrievePostListThunk } from './operations';
+import { retrievePostListThunk, retrievePostByIdThunk } from './operations';
 
 export const createPost = (post) => ({});
 
 export const retrievePostList = () => retrievePostListThunk();
 
-export const retrievePostById = (postId) => ({
-  type: RETRIEVE_POST_BY_ID,
-  payload: {},
-});
+export const retrievePostById = (postId) => retrievePostByIdThunk(postId);
 
 export const updatePost = (postId) => ({
   type: UPDATE_POST,

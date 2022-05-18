@@ -5,7 +5,6 @@ import Loader from 'views/components/Loader';
 
 const ViewPost = React.lazy(() => import('views/pages/ViewPost'));
 const CreatePost = React.lazy(() => import('views/pages/CreatePost'));
-const UpdatePost = React.lazy(() => import('views/pages/UpdatePost'));
 const ErrorPage = React.lazy(() => import('views/pages/Error'));
 
 export const useRoutesConfig = () => {
