@@ -1,22 +1,16 @@
 import React from 'react';
 import './App.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { retrievePostList } from 'services/features/posts/actions';
+import Header from 'views/layouts/Header';
+import Footer from 'views/layouts/Footer';
+import { footerDetails } from 'views/utils/constants';
+import { useRoutesConfig } from './views/routes/index';
 
 function App() {
-  const { loading, retrievedPostList } = useSelector((state) => state.posts);
-  const dispatch = useDispatch();
-
-  React.useEffect(() => {
-    dispatch(retrievePostList());
-  }, [dispatch]);
-
   return (
     <React.Fragment>
-      <h1>POSTS</h1>
-      <div>
-        {loading && <div>{retrievedPostList.map((item) => item.title)}</div>}
-      </div>
+      <Header />
+      {useRoutesConfig()}
+      <Footer details={footerDetails} />
     </React.Fragment>
   );
 }
