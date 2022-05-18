@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div>
       <div>
-        <Link to="/">Home</Link>
+        <Link to={`/posts?page=${0}`}>Home</Link>
       </div>
       <div>
         <Link to="/create">Create Post</Link>

@@ -1,41 +1,52 @@
 import * as React from 'react';
-import { useRoutes } from 'react-router-dom';
+import { useRoutes, Navigate } from 'react-router-dom';
 import Home from '../pages/Home/index';
-import ViewPost from 'views/pages/ViewPost';
-import CreatePost from 'views/pages/CreatePost';
-import UpdatePost from 'views/pages/UpdatePost';
-import ErrorPage from 'views/pages/Error';
+import Loader from 'views/components/Loader';
+
+const ViewPost = React.lazy(() => import('views/pages/ViewPost'));
+const CreatePost = React.lazy(() => import('views/pages/CreatePost'));
+const UpdatePost = React.lazy(() => import('views/pages/UpdatePost'));
+const ErrorPage = React.lazy(() => import('views/pages/Error'));
 
 export const useRoutesConfig = () => {
-  let routeList = [
+  const routes = [
     {
       path: '/',
-      element: <Home />,
-      children: [
-        {
-          path: '*',
-          element: <ErrorPage />,
-        },
-        {
-          path: '/view/:postId',
-          element: <ViewPost />,
-        },
-        {
-          path: '/view/:postId/*',
-          element: <ErrorPage />,
-        },
-        {
-          path: '/edit/:postId',
-          element: <UpdatePost />,
-        },
-        {
-          path: '/edit/:postId/*',
-          element: <ErrorPage />,
-        },
-      ],
+      element: <Navigate to="posts" replace />,
     },
-    { path: '/create', element: <CreatePost /> },
+    {
+      path: 'posts',
+      element: (
+        <React.Suspense fallback={<Loader />}>
+          <Home />
+        </React.Suspense>
+      ),
+    },
+    {
+      path: 'posts/:postId',
+      element: (
+        <React.Suspense fallback={<Loader />}>
+          <ViewPost />
+        </React.Suspense>
+      ),
+    },
+    {
+      path: 'create',
+      element: (
+        <React.Suspense fallback={<Loader />}>
+          <CreatePost />
+        </React.Suspense>
+      ),
+    },
+    {
+      path: '*',
+      element: (
+        <React.Suspense fallback={<Loader />}>
+          <ErrorPage />
+        </React.Suspense>
+      ),
+    },
   ];
-  let element = useRoutes([...routeList]);
+  const element = useRoutes([...routes]);
   return element;
 };

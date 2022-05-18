@@ -6,7 +6,7 @@ const ListItem = ({ title, body, postId }) => {
   const navigate = useNavigate();
   const handleClick = (event) => {
     event.preventDefault();
-    navigate(`/view/${postId}`);
+    navigate(`/posts/${postId}`, { replace: true });
   };
 
   return (
