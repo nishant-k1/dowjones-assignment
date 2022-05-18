@@ -3,8 +3,8 @@ import {
   CREATE_POST,
   RETRIEVE_POST_LIST,
   RETRIEVE_POST_BY_ID,
-  UPDATE_POST,
-  DELETE_POST,
+  UPDATE_POST_BY_ID,
+  DELETE_POST_BY_ID,
 } from './types';
 
 export const retrievePostListThunk = () => async (dispatch, getState) => {
@@ -45,6 +45,30 @@ export const retrievePostByIdThunk = (postId) => async (dispatch, getState) => {
         type: RETRIEVE_POST_BY_ID,
         payload: {
           ...res.data,
+        },
+      });
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const deletePostByIdThunk = (postId) => async (dispatch, getState) => {
+  const requestConfig = {
+    url: `/posts/${postId}`,
+    method: 'DELETE',
+    baseURL: 'https://jsonplaceholder.typicode.com/',
+    headers: { 'X-Requested-With': 'XMLHttpRequest' },
+    responseType: 'json',
+  };
+
+  try {
+    const res = await axios(requestConfig);
+    if (res.status === 200) {
+      dispatch({
+        type: DELETE_POST_BY_ID,
+        payload: {
+          postId,
         },
       });
     }

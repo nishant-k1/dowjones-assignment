@@ -2,8 +2,8 @@ import {
   CREATE_POST,
   RETRIEVE_POST_LIST,
   RETRIEVE_POST_BY_ID,
-  UPDATE_POST,
-  DELETE_POST,
+  UPDATE_POST_BY_ID,
+  DELETE_POST_BY_ID,
 } from './types';
 
 const initialState = {
@@ -30,6 +30,17 @@ export const postsReducer = (state = initialState, { type, payload }) => {
         ...state,
         loading: true,
         retrievedPostById: { ...payload },
+      };
+    }
+
+    case DELETE_POST_BY_ID: {
+      const newPostList = state.retrievedPostList.filter(
+        (item) => item.id !== payload.postId,
+      );
+      return {
+        ...state,
+        loading: true,
+        retrievedPostList: [...newPostList],
       };
     }
 

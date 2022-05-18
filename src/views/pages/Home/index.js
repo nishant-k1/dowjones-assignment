@@ -37,7 +37,7 @@ const Home = () => {
       setCurrentItems(totalItems.slice(itemOffset, endOffset));
       setPageCount(Math.ceil(totalItems.length / itemsPerPage));
     }
-  }, [itemOffset, itemsPerPage, loading]);
+  }, [itemOffset, loading, totalItems]);
 
   const handlePageClick = (event) => {
     if (loading) {
