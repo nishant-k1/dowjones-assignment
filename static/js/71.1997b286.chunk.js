@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkdowjones=self.webpackChunkdowjones||[]).push([[71],{6071:function(e,n,s){s.r(n);s(2791);var t=s(184);n.default=function(){return(0,t.jsx)("div",{children:"CreatePost"})}}}]);
+//# sourceMappingURL=71.1997b286.chunk.js.map
