@@ -9,6 +9,7 @@ import {
 const initialState = {
   loading: false,
   retrievedPostList: [],
+  updatedPostList: [],
   retrievedPostById: {},
   updatedPost: null,
   createdPost: null,
@@ -16,23 +17,27 @@ const initialState = {
 };
 
 export const postsReducer = (state = initialState, { type, payload }) => {
-  const updatedList = [...state.retrievedPostList, payload];
   switch (type) {
     case CREATE_POST: {
+      const updatedList = [...state.retrievedPostList, payload];
+
       return {
         ...state,
         loading: true,
-        retrievedPostList: [...updatedList],
+        updatedPostList: [...updatedList],
         createdPost: { ...payload },
       };
     }
 
     case UPDATE_POST_BY_ID: {
-      const updatedList = [...state.retrievedPostList, payload];
+      const updatedList = state.retrievedPostList.filter(
+        (item) => item.id !== payload.postId,
+      );
+
       return {
         ...state,
         loading: true,
-        retrievedPostList: [...updatedList],
+        updatedPostList: [...updatedList, payload],
         updatedPost: { ...payload },
       };
     }
@@ -42,6 +47,7 @@ export const postsReducer = (state = initialState, { type, payload }) => {
         ...state,
         loading: true,
         retrievedPostList: [...payload],
+        updatedPostList: [...payload],
       };
     }
 
@@ -54,14 +60,15 @@ export const postsReducer = (state = initialState, { type, payload }) => {
     }
 
     case DELETE_POST_BY_ID: {
-      const newPostList = state.retrievedPostList.filter(
+      const updatedList = state.retrievedPostList.filter(
         (item) => item.id !== payload.postId,
       );
 
       return {
         ...state,
         loading: true,
-        retrievedPostList: [...newPostList],
+        retrievedPostList: [...updatedList],
+        updatedPostList: [...updatedList],
         deletedPost: { ...payload },
       };
     }

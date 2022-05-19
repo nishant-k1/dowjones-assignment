@@ -39,6 +39,7 @@ export const createPostThunk = (postValues) => async (dispatch, getState) => {
 export const updatePostByIdThunk =
   (postValues) => async (dispatch, getState) => {
     const postData = {
+      id: postValues.postId,
       userId: postValues.userId,
       title: postValues.title,
       body: postValues.article,
@@ -46,13 +47,14 @@ export const updatePostByIdThunk =
 
     const requestConfig = {
       url: `/posts/${postValues.postId}`,
-      method: 'POST',
+      method: 'PUT',
       baseURL: 'https://jsonplaceholder.typicode.com',
       headers: { 'X-Requested-With': 'XMLHttpRequest' },
       responseType: 'json',
       data: { ...postData },
     };
 
+    alert('working');
     try {
       const res = await axios(requestConfig);
       if (res.status === 201) {

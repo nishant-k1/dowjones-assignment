@@ -6,36 +6,14 @@ import Loader from '../../components/Loader/index';
 import { itemsPerPage } from 'views/utils/constants';
 import ReactPaginate from 'react-paginate';
 import { useSearchParams } from 'react-router-dom';
+import homeStyles from './index.module.css';
 
 const Home = () => {
-  const { loading, retrievedPostList, createdPost, updatedPost, deletedPost } =
-    useSelector((state) => state.posts);
-
-  const mutatedPostList = (() => {
-    if (!createdPost && !updatedPost && !deletedPost) {
-      return [...retrievedPostList];
-    }
-
-    if (createdPost) {
-      alert(JSON.stringify(createdPost));
-      return [...retrievedPostList, createdPost];
-    }
-
-    if (updatedPost) {
-      alert(JSON.stringify(updatedPost));
-      return [...retrievedPostList, updatedPost];
-    }
-
-    if (deletedPost) {
-      return [...retrievedPostList].filter(
-        (item) => item.id !== deletedPost.postId,
-      );
-    }
-  })();
+  const { loading, updatedPostList } = useSelector((state) => state.posts);
 
   const descendingOrderPostList =
     loading &&
-    [...mutatedPostList].sort(
+    [...updatedPostList].sort(
       (prevItem, nextItem) => nextItem.id - prevItem.id,
     );
 
@@ -62,7 +40,7 @@ const Home = () => {
       setCurrentItems(totalItems.slice(itemOffset, endOffset));
       setPageCount(Math.ceil(totalItems.length / itemsPerPage));
     }
-  }, [itemOffset, loading, retrievedPostList]);
+  }, [itemOffset, loading, updatedPostList]);
 
   const handlePageClick = (event) => {
     if (loading) {
@@ -74,18 +52,30 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel="next >"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
-        pageCount={pageCount}
-        previousLabel="< previous"
-        renderOnZeroPageCount={null}
-      />
-      {loading && <List list={currentItems} />}
-      {!loading && <Loader height={'2rem'} width={'2rem'} color={'pink'} />}
+    <div className={homeStyles.section}>
+      <div className={homeStyles.container}>
+        <ReactPaginate
+          breakLabel="..."
+          nextLabel="next >"
+          onPageChange={handlePageClick}
+          pageRangeDisplayed={5}
+          pageCount={pageCount}
+          previousLabel="< previous"
+          renderOnZeroPageCount={null}
+          breakClassName={'page-item'}
+          breakLinkClassName={'page-link'}
+          containerClassName={'pagination'}
+          pageClassName={'page-item'}
+          pageLinkClassName={'page-link'}
+          previousClassName={'page-item'}
+          previousLinkClassName={'page-link'}
+          nextClassName={'page-item'}
+          nextLinkClassName={'page-link'}
+          activeClassName={'active'}
+        />
+        {loading && <List list={currentItems} />}
+        {!loading && <Loader height={'2rem'} width={'2rem'} color={'pink'} />}
+      </div>
     </div>
   );
 };

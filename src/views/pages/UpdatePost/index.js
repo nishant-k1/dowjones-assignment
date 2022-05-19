@@ -2,12 +2,18 @@ import React from 'react';
 import Loader from '../../components/Loader/index';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { updatePostByIdThunk } from 'services/features/posts/operations';
-import { retrievePostById } from 'services/features/posts/actions';
+import {
+  retrievePostById,
+  updatePostById,
+} from 'services/features/posts/actions';
 import PostForm from 'views/components/PostForm';
+import { useNavigate } from 'react-router-dom';
 
 const UpdatePost = ({ postId }) => {
   const { loading, retrievedPostById } = useSelector((state) => state.posts);
+
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   React.useEffect(() => {
@@ -29,7 +35,9 @@ const UpdatePost = ({ postId }) => {
   };
   const handleClick = (event) => {
     event.preventDefault();
-    dispatch(updatePostByIdThunk(postValues));
+
+    dispatch(updatePostById(postValues));
+    // navigate('/', { replace: true });
   };
 
   return (

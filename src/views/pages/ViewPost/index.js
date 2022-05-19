@@ -3,37 +3,33 @@ import { retrievePostById } from 'services/features/posts/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../../components/Loader/index';
 import { useParams } from 'react-router-dom';
-import UpdatePost from './UpdatePost';
+import { useNavigate } from 'react-router-dom';
+import { FaEdit } from 'react-icons/fa';
 
 const ViewPost = () => {
   const { postId } = useParams();
   const { loading, retrievedPostById } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
   React.useEffect(() => {
     dispatch(retrievePostById(postId));
   }, [dispatch, postId]);
 
-  const [updatePageStatus, setUpdatePageState] = React.useState(false);
-
   return (
     <div>
       {!loading && <Loader height={'2rem'} width={'2rem'} color={'pink'} />}
-      {loading && !updatePageStatus && (
+      {loading && (
         <React.Fragment>
           <h2>{retrievedPostById.id}</h2>
           <h3>{retrievedPostById.title}</h3>
           <p>{retrievedPostById.body}</p>
-          <button
+          <FaEdit
             onClick={() => {
-              setUpdatePageState(true);
+              navigate(`/posts/update/${postId}`, { replace: true });
             }}
-          >
-            Edit
-          </button>
+          />
         </React.Fragment>
       )}
-      {loading && updatePageStatus && <UpdatePost postId={postId} />}
     </div>
   );
 };

@@ -1,0 +1,36 @@
+.card {
+  background-color: #ffffff;
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: repeat(2, 0.25fr 0.75fr);
+  -ms-grid-columns: repeat(2, 0.25fr 0.75fr);
+  bordertop: 1px solid rgb(48, 48, 48);
+  borderbottom: 1px solid rgb(48, 48, 48);
+  padding: 0.5rem;
+  column-gap: 0.5rem;
+  align-items: start;
+  justify-content: start;
+  height: 10rem;
+  width: 20rem;
+}
+.card > div {
+  height: 8rem;
+}
+.card > div > button {
+  border: none;
+  background-color: transparent;
+}
+
+.card > div > img {
+  height: 8rem;
+  width: 12rem;
+}
+
+.subCard {
+  width: 100%;
+}
+
+.subCard > div {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 0.5fr);
+}

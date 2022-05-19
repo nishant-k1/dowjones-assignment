@@ -4,7 +4,8 @@ import Home from '../pages/Home/index';
 import Loader from 'views/components/Loader';
 
 const ViewPost = React.lazy(() => import('views/pages/ViewPost'));
-const Create = React.lazy(() => import('views/pages/Create'));
+const CreatePost = React.lazy(() => import('views/pages/CreatePost'));
+const UpdatePost = React.lazy(() => import('views/pages/UpdatePost'));
 const ErrorPage = React.lazy(() => import('views/pages/Error'));
 
 export const routesConfig = [
@@ -25,7 +26,7 @@ export const routesConfig = [
     ),
   },
   {
-    path: 'posts/:postId',
+    path: 'posts/view/:postId',
     element: (
       <React.Suspense fallback={<Loader />}>
         <ViewPost />
@@ -36,7 +37,15 @@ export const routesConfig = [
     path: 'create',
     element: (
       <React.Suspense fallback={<Loader />}>
-        <Create />
+        <CreatePost />
+      </React.Suspense>
+    ),
+  },
+  {
+    path: 'posts/update/:postId',
+    element: (
+      <React.Suspense fallback={<Loader />}>
+        <UpdatePost />
       </React.Suspense>
     ),
   },
