@@ -6,9 +6,10 @@ const List = ({ list }) => {
     <React.Fragment>
       {list.map((item) => {
         const { title, body, id } = item;
+        const truncatedBody = body.split(' ').slice(0, 9).join(' ') + '...';
         return (
           <React.Fragment key={id}>
-            <ListItem title={title} body={body} postId={id} />
+            <ListItem title={title} body={truncatedBody} postId={id} />
           </React.Fragment>
         );
       })}

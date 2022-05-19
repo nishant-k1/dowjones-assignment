@@ -10,9 +10,9 @@ const initialState = {
   loading: false,
   retrievedPostList: [],
   retrievedPostById: {},
-  updatedPost: false,
-  createdPost: false,
-  deletedPost: false,
+  updatedPost: null,
+  createdPost: null,
+  deletedPost: null,
 };
 
 export const postsReducer = (state = initialState, { type, payload }) => {
@@ -23,7 +23,7 @@ export const postsReducer = (state = initialState, { type, payload }) => {
         ...state,
         loading: true,
         retrievedPostList: [...updatedList],
-        createdPost: true,
+        createdPost: { ...payload },
       };
     }
 
@@ -33,7 +33,7 @@ export const postsReducer = (state = initialState, { type, payload }) => {
         ...state,
         loading: true,
         retrievedPostList: [...updatedList],
-        createdPost: true,
+        updatedPost: { ...payload },
       };
     }
 
@@ -62,7 +62,7 @@ export const postsReducer = (state = initialState, { type, payload }) => {
         ...state,
         loading: true,
         retrievedPostList: [...newPostList],
-        deletedPost: true,
+        deletedPost: { ...payload },
       };
     }
 

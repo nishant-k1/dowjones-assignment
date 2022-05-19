@@ -5,7 +5,7 @@ import Loader from '../../components/Loader/index';
 import { useParams } from 'react-router-dom';
 import UpdatePost from './UpdatePost';
 
-const View = () => {
+const ViewPost = () => {
   const { postId } = useParams();
   const { loading, retrievedPostById } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
@@ -38,4 +38,4 @@ const View = () => {
   );
 };
 
-export default View;
+export default ViewPost;

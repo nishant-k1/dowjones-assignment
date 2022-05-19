@@ -8,11 +8,36 @@ import ReactPaginate from 'react-paginate';
 import { useSearchParams } from 'react-router-dom';
 
 const Home = () => {
-  const { loading, retrievedPostList } = useSelector((state) => state.posts);
+  const { loading, retrievedPostList, createdPost, updatedPost, deletedPost } =
+    useSelector((state) => state.posts);
 
-  const descendingOrderPostList = [...retrievedPostList].sort(
-    (prevItem, nextItem) => nextItem.id - prevItem.id,
-  );
+  const mutatedPostList = (() => {
+    if (!createdPost && !updatedPost && !deletedPost) {
+      return [...retrievedPostList];
+    }
+
+    if (createdPost) {
+      alert(JSON.stringify(createdPost));
+      return [...retrievedPostList, createdPost];
+    }
+
+    if (updatedPost) {
+      alert(JSON.stringify(updatedPost));
+      return [...retrievedPostList, updatedPost];
+    }
+
+    if (deletedPost) {
+      return [...retrievedPostList].filter(
+        (item) => item.id !== deletedPost.postId,
+      );
+    }
+  })();
+
+  const descendingOrderPostList =
+    loading &&
+    [...mutatedPostList].sort(
+      (prevItem, nextItem) => nextItem.id - prevItem.id,
+    );
 
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
