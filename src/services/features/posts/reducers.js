@@ -10,13 +10,33 @@ const initialState = {
   loading: false,
   retrievedPostList: [],
   retrievedPostById: {},
-  updatedPost: {},
-  createdPost: {},
-  deletedPost: {},
+  updatedPost: false,
+  createdPost: false,
+  deletedPost: false,
 };
 
 export const postsReducer = (state = initialState, { type, payload }) => {
   switch (type) {
+    case CREATE_POST: {
+      const newPostList = state.retrievedPostList.push(payload);
+      return {
+        ...state,
+        loading: true,
+        retrievedPostList: [...newPostList],
+        createdPost: true,
+      };
+    }
+
+    case UPDATE_POST_BY_ID: {
+      const updateList = [...state.retrievedPostList, payload];
+      return {
+        ...state,
+        loading: true,
+        retrievedPostList: [...updateList],
+        createdPost: true,
+      };
+    }
+
     case RETRIEVE_POST_LIST: {
       return {
         ...state,
@@ -41,6 +61,7 @@ export const postsReducer = (state = initialState, { type, payload }) => {
         ...state,
         loading: true,
         retrievedPostList: [...newPostList],
+        deletedPost: true,
       };
     }
 

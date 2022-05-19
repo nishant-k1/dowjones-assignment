@@ -1,24 +1,15 @@
 import React from 'react';
-import Loader from '../../components/Loader/index';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { updatePostByIdThunk } from 'services/features/posts/operations';
 import { formUtils } from 'views/utils/constants';
-import { retrievePostById } from 'services/features/posts/actions';
+import { createPost } from '../../../services/features/posts/actions';
+import { useDispatch } from 'react-redux';
 
-const UpdatePost = ({ postId }) => {
-  const { loading, retrievedPostById } = useSelector((state) => state.posts);
+const CreatePost = () => {
   const dispatch = useDispatch();
 
-  React.useEffect(() => {
-    dispatch(retrievePostById(postId));
-  }, [dispatch, postId]);
-
   const [postValues, setPostValues] = React.useState({
-    postId: retrievedPostById.id ? retrievedPostById.id : postId,
-    userId: retrievedPostById.userId ? retrievedPostById.userId : '',
-    title: retrievedPostById.title ? retrievedPostById.title : '',
-    article: retrievedPostById.body ? retrievedPostById.body : '',
+    userId: '',
+    title: '',
+    article: '',
   });
 
   const { userId, title, article, submit } = formUtils;
@@ -31,13 +22,12 @@ const UpdatePost = ({ postId }) => {
   };
   const handleClick = (event) => {
     event.preventDefault();
-    dispatch(updatePostByIdThunk(postValues));
+    dispatch(createPost(postValues));
   };
 
   return (
     <div>
-      {!loading && <Loader height={'2rem'} width={'2rem'} color={'pink'} />}
-      <div>
+      <React.Fragment>
         <label htmlFor="userId">{userId}</label>
         <input
           type="text"
@@ -63,9 +53,9 @@ const UpdatePost = ({ postId }) => {
         <button onClick={handleClick} type="submit">
           {submit}
         </button>
-      </div>
+      </React.Fragment>
     </div>
   );
 };
 
-export default UpdatePost;
+export default CreatePost;

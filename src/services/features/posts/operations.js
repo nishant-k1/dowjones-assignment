@@ -7,6 +7,65 @@ import {
   DELETE_POST_BY_ID,
 } from './types';
 
+export const createPostThunk = (postValues) => async (dispatch, getState) => {
+  const postData = {
+    userId: postValues.userId,
+    title: postValues.title,
+    body: postValues.article,
+  };
+
+  const requestConfig = {
+    url: '/posts',
+    method: 'POST',
+    baseURL: 'https://jsonplaceholder.typicode.com',
+    headers: { 'X-Requested-With': 'XMLHttpRequest' },
+    responseType: 'json',
+    data: { ...postData },
+  };
+
+  try {
+    const res = await axios(requestConfig);
+    if (res.status === 201) {
+      dispatch({
+        type: CREATE_POST,
+        payload: { ...res.data },
+      });
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const updatePostByIdThunk =
+  (postValues) => async (dispatch, getState) => {
+    const postData = {
+      userId: postValues.userId,
+      title: postValues.title,
+      body: postValues.article,
+    };
+
+    const requestConfig = {
+      url: `/posts/${postValues.postId}`,
+      method: 'POST',
+      baseURL: 'https://jsonplaceholder.typicode.com',
+      headers: { 'X-Requested-With': 'XMLHttpRequest' },
+      responseType: 'json',
+      data: { ...postData },
+    };
+
+    try {
+      const res = await axios(requestConfig);
+      if (res.status === 201) {
+        dispatch({
+          type: UPDATE_POST_BY_ID,
+          payload: { ...res.data },
+        });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
 export const retrievePostListThunk = () => async (dispatch, getState) => {
   const requestConfig = {
     url: '/posts',

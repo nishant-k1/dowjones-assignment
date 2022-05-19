@@ -33,7 +33,7 @@ const ViewPost = () => {
           </button>
         </React.Fragment>
       )}
-      {loading && updatePageStatus && <UpdatePost />}
+      {loading && updatePageStatus && <UpdatePost postId={postId} />}
     </div>
   );
 };

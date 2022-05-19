@@ -1,16 +1,18 @@
 import React from 'react';
+import CreatePostUI from 'views/components/CreatePostUI';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const CreatePost = () => {
+  const navigate = useNavigate();
+  const { loading, createdPost } = useSelector((state) => state.posts);
+
+  if (loading && createdPost) {
+    navigate('/', { replace: true });
+  }
   return (
     <div>
-      <React.Fragment>
-        <label htmlFor="userId">User Id</label>
-        <input name="userId" />
-        <label htmlFor="title">Title</label>
-        <input name="title" />
-        <label htmlFor="body">Title</label>
-        <input name="body" />
-      </React.Fragment>
+      <CreatePostUI />
     </div>
   );
 };
