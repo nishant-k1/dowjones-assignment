@@ -1,14 +1,16 @@
 import React from 'react';
-import CreatePostUI from 'views/components/CreatePostUI';
+import CreatePostUI from 'views/pages/Create/CreatePost';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
-const CreatePost = () => {
+const Create = () => {
   const navigate = useNavigate();
   const { loading, createdPost } = useSelector((state) => state.posts);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   if (loading && createdPost) {
-    navigate('/', { replace: true });
+    navigate(-1, { replace: true });
   }
   return (
     <div>
@@ -17,4 +19,4 @@ const CreatePost = () => {
   );
 };
 
-export default CreatePost;
+export default Create;

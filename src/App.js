@@ -3,13 +3,15 @@ import './App.css';
 import Header from 'views/layouts/Header';
 import Footer from 'views/layouts/Footer';
 import { footerDetails } from 'views/utils/constants';
-import { useRoutesConfig } from './views/routes/index';
+import { routesConfig } from './views/routes/index';
+import { useRoutes } from 'react-router-dom';
 
 function App() {
+  const element = useRoutes(routesConfig);
   return (
     <React.Fragment>
       <Header />
-      {useRoutesConfig()}
+      {element}
       <Footer details={footerDetails} />
     </React.Fragment>
   );

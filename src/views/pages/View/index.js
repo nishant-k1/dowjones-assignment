@@ -3,9 +3,9 @@ import { retrievePostById } from 'services/features/posts/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../../components/Loader/index';
 import { useParams } from 'react-router-dom';
-import UpdatePost from '../UpdatePost';
+import UpdatePost from './UpdatePost';
 
-const ViewPost = () => {
+const View = () => {
   const { postId } = useParams();
   const { loading, retrievedPostById } = useSelector((state) => state.posts);
   const dispatch = useDispatch();
@@ -38,4 +38,4 @@ const ViewPost = () => {
   );
 };
 
-export default ViewPost;
+export default View;

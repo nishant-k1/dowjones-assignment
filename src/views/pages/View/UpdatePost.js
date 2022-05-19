@@ -3,8 +3,8 @@ import Loader from '../../components/Loader/index';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { updatePostByIdThunk } from 'services/features/posts/operations';
-import { formUtils } from 'views/utils/constants';
 import { retrievePostById } from 'services/features/posts/actions';
+import PostForm from 'views/components/PostForm';
 
 const UpdatePost = ({ postId }) => {
   const { loading, retrievedPostById } = useSelector((state) => state.posts);
@@ -21,8 +21,6 @@ const UpdatePost = ({ postId }) => {
     article: retrievedPostById.body ? retrievedPostById.body : '',
   });
 
-  const { userId, title, article, submit } = formUtils;
-
   const handleChange = (event) => {
     setPostValues((prevValues) => ({
       ...prevValues,
@@ -37,33 +35,13 @@ const UpdatePost = ({ postId }) => {
   return (
     <div>
       {!loading && <Loader height={'2rem'} width={'2rem'} color={'pink'} />}
-      <div>
-        <label htmlFor="userId">{userId}</label>
-        <input
-          type="text"
-          name="userId"
-          value={postValues.userId}
+      {loading && (
+        <PostForm
+          value={postValues}
           onChange={handleChange}
+          handleClick={handleClick}
         />
-        <label htmlFor="title">{title}</label>
-        <input
-          type="text"
-          name="title"
-          value={postValues.title}
-          onChange={handleChange}
-        />
-        <label htmlFor="article">{article}</label>
-        <textarea
-          name="article"
-          value={postValues.article}
-          onChange={handleChange}
-          rows="4"
-          cols="50"
-        />
-        <button onClick={handleClick} type="submit">
-          {submit}
-        </button>
-      </div>
+      )}
     </div>
   );
 };

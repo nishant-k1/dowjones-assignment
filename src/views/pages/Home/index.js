@@ -9,7 +9,8 @@ import { useSearchParams } from 'react-router-dom';
 
 const Home = () => {
   const { loading, retrievedPostList } = useSelector((state) => state.posts);
-  const descendingOrderPostList = retrievedPostList.sort(
+
+  const descendingOrderPostList = [...retrievedPostList].sort(
     (prevItem, nextItem) => nextItem.id - prevItem.id,
   );
 
@@ -32,12 +33,11 @@ const Home = () => {
 
   React.useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
-
     if (loading) {
       setCurrentItems(totalItems.slice(itemOffset, endOffset));
       setPageCount(Math.ceil(totalItems.length / itemsPerPage));
     }
-  }, [itemOffset, loading, totalItems]);
+  }, [itemOffset, loading, retrievedPostList]);
 
   const handlePageClick = (event) => {
     if (loading) {
