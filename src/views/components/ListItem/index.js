@@ -35,7 +35,7 @@ const ListItem = ({ title, body, postId }) => {
         <h2>{title}</h2>
         <p>{body}</p>
         <div>
-          <button onClick={handleView}>View</button>
+          <button onClick={handleView}>Read More</button>
           <FaEdit onClick={handleUpdate} />
           <MdDeleteSweep onClick={handleDelete} />
         </div>

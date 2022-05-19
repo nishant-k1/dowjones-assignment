@@ -2,12 +2,12 @@
   background-color: #ffffff;
   display: grid;
   display: -ms-grid;
-  grid-template-columns: repeat(2, 0.25fr 0.75fr);
+  grid-template-columns: repeat(3, max-content);
   -ms-grid-columns: repeat(2, 0.25fr 0.75fr);
   bordertop: 1px solid rgb(48, 48, 48);
   borderbottom: 1px solid rgb(48, 48, 48);
   padding: 0.5rem;
-  column-gap: 0.5rem;
+  column-gap: 1rem;
   align-items: start;
   justify-content: start;
   height: 10rem;
@@ -32,5 +32,11 @@
 
 .subCard > div {
   display: grid;
-  grid-template-columns: 1fr repeat(2, 0.5fr);
+  grid-template-columns: max-content repeat(2, min-content);
+  column-gap: 1rem;
+  margin-top: 4rem;
+}
+
+button {
+  border: none;
 }
