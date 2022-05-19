@@ -7,11 +7,11 @@ import {
   updatePostById,
 } from 'services/features/posts/actions';
 import PostForm from 'views/components/PostForm';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-const UpdatePost = ({ postId }) => {
+const UpdatePost = () => {
   const { loading, retrievedPostById } = useSelector((state) => state.posts);
-
+  const { postId } = useParams();
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
@@ -33,6 +33,7 @@ const UpdatePost = ({ postId }) => {
       [event.target.name]: event.target.value,
     }));
   };
+
   const handleClick = (event) => {
     event.preventDefault();
 

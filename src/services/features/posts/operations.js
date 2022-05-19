@@ -54,7 +54,6 @@ export const updatePostByIdThunk =
       data: { ...postData },
     };
 
-    alert('working');
     try {
       const res = await axios(requestConfig);
       if (res.status === 201) {

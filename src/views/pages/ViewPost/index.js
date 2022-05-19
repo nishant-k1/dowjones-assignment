@@ -9,8 +9,10 @@ import { FaEdit } from 'react-icons/fa';
 const ViewPost = () => {
   const { postId } = useParams();
   const { loading, retrievedPostById } = useSelector((state) => state.posts);
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
   React.useEffect(() => {
     dispatch(retrievePostById(postId));
   }, [dispatch, postId]);

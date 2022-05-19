@@ -8,6 +8,7 @@ import { useRoutes } from 'react-router-dom';
 
 function App() {
   const element = useRoutes(routesConfig);
+
   return (
     <React.Fragment>
       <Header />
