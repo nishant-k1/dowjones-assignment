@@ -56,7 +56,7 @@ export const updatePostByIdThunk =
 
     try {
       const res = await axios(requestConfig);
-      if (res.status === 201) {
+      if (res.status === 200) {
         dispatch({
           type: UPDATE_POST_BY_ID,
           payload: { ...res.data },

@@ -38,7 +38,7 @@ const UpdatePost = () => {
     event.preventDefault();
 
     dispatch(updatePostById(postValues));
-    // navigate('/', { replace: true });
+    navigate('/', { replace: true });
   };
 
   return (
