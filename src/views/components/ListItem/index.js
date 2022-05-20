@@ -28,9 +28,7 @@ const ListItem = ({ title, body, postId }) => {
 
   return (
     <div className={ListItemStyels.card}>
-      <div>
-        <img src={imageLink} alt="some_img" />
-      </div>
+      <img src={imageLink} alt="some_img" />
       <div className={ListItemStyels.subCard}>
         <h2>{title}</h2>
         <p>{body}</p>

@@ -2,41 +2,56 @@
   background-color: #ffffff;
   display: grid;
   display: -ms-grid;
-  grid-template-columns: repeat(3, max-content);
-  -ms-grid-columns: 0.5fr 1fr;
-  bordertop: 1px solid rgb(48, 48, 48);
-  borderbottom: 1px solid rgb(48, 48, 48);
+  grid-template-rows: repeat(3, min-content);
+  -ms-grid-columns: 1fr;
   padding: 0.5rem;
   column-gap: 1rem;
+  row-gap: 1rem;
   align-items: start;
   justify-content: start;
-  height: 10rem;
-  width: 20rem;
 }
 .card > div {
-  height: 8rem;
 }
 .card > div > button {
   border: none;
   background-color: transparent;
 }
 
-.card > div > img {
-  height: 8rem;
-  width: 12rem;
+.card > img {
+  max-width: 100%;
 }
 
 .subCard {
-  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, min-content);
+  row-gap: 1rem;
 }
 
 .subCard > div {
   display: grid;
   grid-template-columns: max-content repeat(2, min-content);
   column-gap: 1rem;
-  margin-top: 4rem;
+  align-items: start;
+  justify-content: start;
+}
+
+.subCard > h2 {
+  font-size: 24px;
+  font-weight: 300px;
+  line-height: 26.4px;
+  color: rgb(53, 55, 66);
 }
 
 button {
+  font-family: 'Whitney SSm A', 'Whitney SSm B', helvetica, arial, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: capitalize;
+  background-color: transparent;
+  color: rgb(149, 131, 89);
+  padding: 0;
   border: none;
+  outline: none;
 }

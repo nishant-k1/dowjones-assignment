@@ -1,7 +1,9 @@
 .App {
   display: grid;
   height: 100%;
-  width: 100%;
+  width: 100vw;
+  grid-template-columns: 1fr;
+  align-items: start;
 }
 
 p {
@@ -12,6 +14,7 @@ p {
   color: rgb(53, 55, 66);
   margin: 0;
 }
+
 h2,
 h3 {
   font-family: 'Whitney SSm A', 'Whitney SSm B', helvetica, arial, sans-serif;
@@ -20,12 +23,4 @@ h3 {
   line-height: 24px;
   color: rgb(68, 83, 101);
   margin: 0;
-}
-
-button {
-  font-family: 'Whitney SSm A', 'Whitney SSm B', helvetica, arial, sans-serif;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 14px;
-  color: rgb(149, 131, 89);
 }
