@@ -20,7 +20,12 @@ const UpdatePost = () => {
     dispatch(retrievePostById(postId));
   }, [dispatch, postId]);
 
-  const [postValues, setPostValues] = React.useState({});
+  const [postValues, setPostValues] = React.useState({
+    postId: retrievedPostById.id ? retrievedPostById.id : postId,
+    userId: retrievedPostById.userId ? retrievedPostById.userId : '',
+    title: retrievedPostById.title ? retrievedPostById.title : '',
+    article: retrievedPostById.body ? retrievedPostById.body : '',
+  });
 
   React.useEffect(() => {
     setPostValues({

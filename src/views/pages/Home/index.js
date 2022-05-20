@@ -17,6 +17,8 @@ const Home = () => {
       (prevItem, nextItem) => nextItem.id - prevItem.id,
     );
 
+  console.log(descendingOrderPostList);
+
   const dispatch = useDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
 

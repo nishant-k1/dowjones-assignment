@@ -31,7 +31,7 @@ export const postsReducer = (state = initialState, { type, payload }) => {
 
     case UPDATE_POST_BY_ID: {
       const updatedList = state.retrievedPostList.filter(
-        (item) => item.id !== payload.postId,
+        (item) => item.id !== payload.id,
       );
 
       return {
