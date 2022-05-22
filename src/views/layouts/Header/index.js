@@ -68,7 +68,7 @@ const Header = () => {
               <option value="1">Buy</option>
               <option value="2">Rent</option>
             </select>
-            <p>select a location</p>
+            <input placeholder="Select A Location" />
             <AiOutlineSearch className={styles.icon} />
           </div>
         </div>

@@ -113,14 +113,18 @@
   border-right: 1px solid rgba(0, 0, 0, 0.491);
 }
 
-.bottomHeader > div > p {
+.bottomHeader > div > input {
   border: none;
   outline: none;
   background-color: transparent;
   padding: 0.5rem 12rem 0.5rem 0;
   text-transform: capitalize;
-  color: rgba(255, 0, 0, 0.778);
+  color: rgba(79, 76, 76, 0.778);
   font-weight: 100;
+}
+
+.bottomHeader > div > input::placeholder {
+  color: rgba(255, 37, 37);
 }
 
 .bottomHeader > div > .icon {
