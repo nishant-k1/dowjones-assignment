@@ -8,6 +8,7 @@ import {
 } from 'services/features/posts/actions';
 import PostForm from 'views/components/PostForm';
 import { useNavigate, useParams } from 'react-router-dom';
+import styles from './index.module.css';
 
 const UpdatePost = () => {
   const { loading, retrievedPostById } = useSelector((state) => state.posts);
@@ -54,11 +55,16 @@ const UpdatePost = () => {
     <div>
       {!loading && <Loader height={'2rem'} width={'2rem'} color={'pink'} />}
       {loading && (
-        <PostForm
-          value={postValues}
-          onChange={handleChange}
-          handleClick={handleClick}
-        />
+        <div className={styles.section}>
+          <div className={styles.container}>
+            <h3>Update A Post</h3>
+            <PostForm
+              value={postValues}
+              onChange={handleChange}
+              handleClick={handleClick}
+            />
+          </div>
+        </div>
       )}
     </div>
   );

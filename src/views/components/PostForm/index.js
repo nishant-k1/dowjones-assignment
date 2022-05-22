@@ -9,7 +9,6 @@ const PostForm = ({ value, handleClick, onChange }) => {
   return (
     <div className={styles.section}>
       <div className={styles.container}>
-        <h3>Create A Post</h3>
         <div>
           <label htmlFor="userId">{userId}</label>
           <input

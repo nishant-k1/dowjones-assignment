@@ -3,6 +3,7 @@ import { createPost } from 'services/features/posts/actions';
 import { useDispatch } from 'react-redux';
 import PostForm from '../../components/PostForm/index';
 import { useNavigate } from 'react-router-dom';
+import styles from './index.module.css';
 
 const CreatePost = () => {
   const navigate = useNavigate();
@@ -27,11 +28,16 @@ const CreatePost = () => {
   };
 
   return (
-    <PostForm
-      value={postValues}
-      onChange={handleChange}
-      handleClick={handleClick}
-    />
+    <div className={styles.section}>
+      <div className={styles.container}>
+        <h3>Create A Post</h3>
+        <PostForm
+          value={postValues}
+          onChange={handleChange}
+          handleClick={handleClick}
+        />
+      </div>
+    </div>
   );
 };
 
