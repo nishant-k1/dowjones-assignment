@@ -4,8 +4,10 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { deletePostById } from 'services/features/posts/actions';
 import { FaEdit } from 'react-icons/fa';
-import ListItemStyels from './index.module.css';
+import styles from './index.module.css';
 import { imageLink } from 'views/utils/constants';
+import YouTube from 'react-youtube';
+import { videoLink } from 'views/utils/constants';
 
 const ListItem = ({ title, body, postId }) => {
   const navigate = useNavigate();
@@ -27,15 +29,24 @@ const ListItem = ({ title, body, postId }) => {
   };
 
   return (
-    <div className={ListItemStyels.card}>
-      <img src={imageLink} alt="some_img" />
-      <div className={ListItemStyels.subCard}>
-        <h2>{title}</h2>
+    <div className={styles.card}>
+      {postId % 2 !== 0 && <img src={imageLink} alt="some_img" />}
+      {postId % 2 === 0 && (
+        <iframe
+          src={videoLink}
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      )}
+      <div className={styles.subCard}>
+        <h3>{title}</h3>
         <p>{body}</p>
         <div>
           <button onClick={handleView}>Read More</button>
-          <FaEdit onClick={handleUpdate} />
-          <MdDeleteSweep onClick={handleDelete} />
+          <FaEdit className={styles.icon} onClick={handleUpdate} />
+          <MdDeleteSweep className={styles.icon} onClick={handleDelete} />
         </div>
       </div>
     </div>

@@ -56,6 +56,8 @@ const Home = () => {
   return (
     <div className={homeStyles.section}>
       <div className={homeStyles.container}>
+        {loading && <List list={currentItems} />}
+        {!loading && <Loader height={'2rem'} width={'2rem'} color={'pink'} />}
         <ReactPaginate
           breakLabel="..."
           nextLabel="next >"
@@ -75,8 +77,6 @@ const Home = () => {
           nextLinkClassName={'page-link'}
           activeClassName={'active'}
         />
-        {loading && <List list={currentItems} />}
-        {!loading && <Loader height={'2rem'} width={'2rem'} color={'pink'} />}
       </div>
     </div>
   );

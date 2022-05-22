@@ -10,15 +10,23 @@
   align-items: start;
   justify-content: start;
 }
+
 .card > div {
 }
+
 .card > div > button {
   border: none;
   background-color: transparent;
 }
 
 .card > img {
-  max-width: 100%;
+  width: 100%;
+  height: 224px;
+}
+
+.card > iframe {
+  width: 100%;
+  height: 224px;
 }
 
 .subCard {
@@ -26,6 +34,42 @@
   grid-template-columns: 1fr;
   grid-template-rows: repeat(3, min-content);
   row-gap: 1rem;
+}
+
+.subCard > h3 {
+  font-family: 'Chronicle Display A', 'Chronicle Display B', serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 26.4px;
+  color: rgb(53, 55, 66);
+}
+
+.subCard > p {
+  font-family: 'Whitney SSm A', 'Whitney SSm B', helvetica, arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: normal;
+  color: rgb(85, 90, 97);
+  text-transform: capitalize;
+}
+
+.subCard > div > button {
+  font-family: 'Whitney SSm A', 'Whitney SSm B', helvetica, arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: rgb(149, 131, 89);
+  padding: 0;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transition: 0.3s;
+}
+
+.subCard > div > button:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
 }
 
 .subCard > div {
@@ -36,22 +80,18 @@
   justify-content: start;
 }
 
-.subCard > h2 {
-  font-size: 24px;
-  font-weight: 300px;
-  line-height: 26.4px;
-  color: rgb(53, 55, 66);
-}
-
-button {
+.icon {
   font-family: 'Whitney SSm A', 'Whitney SSm B', helvetica, arial, sans-serif;
+  font-size: 14px;
   font-weight: 500;
-  font-size: 12px;
   line-height: 14px;
-  text-transform: capitalize;
-  background-color: transparent;
+  text-transform: uppercase;
   color: rgb(149, 131, 89);
   padding: 0;
-  border: none;
-  outline: none;
+  transition: 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+  transition: 0.3s;
 }

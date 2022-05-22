@@ -4,23 +4,5 @@
   width: 100vw;
   grid-template-columns: 1fr;
   align-items: start;
-}
-
-p {
-  font-family: 'Chronicle Display A', 'Chronicle Display B', serif;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 22.86px;
-  color: rgb(53, 55, 66);
-  margin: 0;
-}
-
-h2,
-h3 {
-  font-family: 'Whitney SSm A', 'Whitney SSm B', helvetica, arial, sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 24px;
-  color: rgb(68, 83, 101);
-  margin: 0;
+  justify-content: center;
 }
