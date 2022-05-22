@@ -11,9 +11,6 @@
   justify-content: start;
 }
 
-.card > div {
-}
-
 .card > div > button {
   border: none;
   background-color: transparent;

@@ -6,7 +6,6 @@ import { deletePostById } from 'services/features/posts/actions';
 import { FaEdit } from 'react-icons/fa';
 import styles from './index.module.css';
 import { imageLink } from 'views/utils/constants';
-import YouTube from 'react-youtube';
 import { videoLink } from 'views/utils/constants';
 
 const ListItem = ({ title, body, postId }) => {

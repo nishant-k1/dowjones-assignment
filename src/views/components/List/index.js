@@ -1,11 +1,11 @@
 import React from 'react';
 import ListItem from '../ListItem/index';
-import ListStyles from './index.module.css';
+import styles from './index.module.css';
 
 const List = ({ list }) => {
   return (
     <React.Fragment>
-      <div className={ListStyles.list}>
+      <div className={styles.list}>
         {list.map((item) => {
           const { title, body, id } = item;
           const truncatedBody =
