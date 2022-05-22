@@ -22,6 +22,28 @@
   column-gap: 1rem;
 }
 
+.menus {
+  grid-template-columns: 1fr;
+  justify-items: start;
+  z-index: 200;
+  width: 100vh;
+  grid-template-rows: repeat(2, min-contnt);
+  row-gap: 1rem;
+}
+
+.menus a {
+  text-decoration: none;
+  font-family: Arial;
+  font-size: 17px;
+  font-weight: 200;
+  line-height: normal;
+  color: rgba(36, 35, 35, 0.779);
+  text-transform: uppercase;
+  border-bottom: 1px solid #dedede;
+  width: 100%;
+  padding: 0.5rem;
+}
+
 .icon {
   height: 100%;
   width: 100%;
