@@ -8,7 +8,7 @@
 .container {
   max-width: 1200px;
   height: fit-content;
-  padding: 2.5rem 0;
+  padding: 2.5rem 2rem;
   display: grid;
   margin: 0 auto;
   column-gap: 1rem;
@@ -53,6 +53,15 @@
   align-items: start;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 768px) {
+  .nav {
+    grid-template-columns: max-content;
+    row-gap: 2.5rem;
+    justify-content: start;
+  }
+}
+
 .nav > div {
   display: grid;
   grid-template-columns: max-content;
@@ -80,6 +89,12 @@
   column-gap: 2rem;
 }
 
+@media screen and (max-width: 768px) {
+  .midNav {
+    grid-template-columns: max-content;
+  }
+}
+
 .midNav > a {
   text-decoration: none;
   color: white;
@@ -100,12 +115,12 @@ hr {
   grid-template-columns: 1fr;
   color: rgb(255, 255, 255);
   grid-template-rows: repeat(2, min-content);
-  row-gap: 1rem;
+  row-gap: 0.5rem;
 }
 
 .bottomNav p {
-  font-family: 'Chronicle Display A', 'Chronicle Display B', serif;
-  color: rgb(255, 255, 255);
+  font-family: 'Whitney SSm A', 'Whitney SSm B', helvetica, arial, sans-serif;
+  color: rgb(213, 212, 212);
   font-size: small;
 }
 .bottomNav a {
