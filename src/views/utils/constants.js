@@ -13,6 +13,6 @@ export const formUtils = {
 };
 
 export const imageLink =
-  'https://images.unsplash.com/photo-1509043759401-136742328bb3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=60';
+  'https://thumbs.dreamstime.com/b/villa-nature-villa-nature-beautiful-magnificent-view-background-landscape-panorama-large-bright-brick-villa-hotel-176074801.jpg';
 
-export const videoLink = 'https://www.youtube.com/embed/M5QY2_8704o';
+export const videoLink = 'https://www.youtube.com/embed/M4FaIODB_w8';
