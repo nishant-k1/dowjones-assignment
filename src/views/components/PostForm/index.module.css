@@ -1,0 +1,77 @@
+.section {
+  width: 100%;
+  height: fit-content;
+}
+
+.container {
+  max-width: 1200px;
+  height: fit-content;
+  margin: 4rem auto;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: space-between;
+  column-gap: 1rem;
+  row-gap: 1.5rem;
+}
+
+.container div {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.container h3 {
+  text-align: center;
+  font-family: Retina, Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 28px;
+  color: rgb(51, 51, 51);
+}
+
+label {
+  font-family: Retina, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 16px;
+  color: rgb(51, 51, 51);
+}
+
+input,
+textarea {
+  border: 1px solid #a3915f;
+  height: 2.5rem;
+  outline: none;
+  background-color: #f0f0f0;
+  font-family: Retina, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 16px;
+  color: rgb(51, 51, 51);
+}
+
+input:hover,
+textarea:hover {
+  border: 1px solid teal;
+  outline: none;
+  width: 100%;
+}
+
+textarea {
+  height: 8rem;
+}
+
+button {
+  border: 1px solid #a3915f;
+  background-color: #a3915f;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 44px;
+  max-width: 8rem;
+  font-family: Retina, Helvetica, Arial, sans-serif;
+  display: grid;
+  align-items: center;
+  justify-content: center0;
+}
