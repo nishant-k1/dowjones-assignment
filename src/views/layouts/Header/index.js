@@ -11,10 +11,10 @@ const Header = () => {
         <div className={styles.container}>
           <div className={styles.startItems}>
             <Link className={styles.link} to={`/posts?page=${0}`}>
-              ABOUT
+              Home
             </Link>
             <Link className={styles.link} to="/create">
-              ADVERTISE WITH US
+              CREATE POST
             </Link>
           </div>
 

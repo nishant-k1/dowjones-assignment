@@ -34,9 +34,9 @@ const ViewPost = () => {
               allowfullscreen
             />
           </div>
-          <div className={styles.section}>
+          <div className={`${styles.section} ${styles.midSection}`}>
             <div className={styles.container}>
-              <h2>{retrievedPostById.id}</h2>
+              <h2>User Id: {retrievedPostById.id}</h2>
               <h3>{retrievedPostById.title}</h3>
               <p>{retrievedPostById.body}</p>
               <button
