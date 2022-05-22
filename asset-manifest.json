@@ -1,23 +1,27 @@
 {
   "files": {
     "main.css": "/dowjones-assignment/static/css/main.35651317.css",
-    "main.js": "/dowjones-assignment/static/js/main.fdb6aecc.js",
+    "main.js": "/dowjones-assignment/static/js/main.0f36f397.js",
     "static/js/567.64377d5d.chunk.js": "/dowjones-assignment/static/js/567.64377d5d.chunk.js",
-    "static/js/71.71c2f9e9.chunk.js": "/dowjones-assignment/static/js/71.71c2f9e9.chunk.js",
-    "static/js/721.71de7b3d.chunk.js": "/dowjones-assignment/static/js/721.71de7b3d.chunk.js",
+    "static/css/71.9667658b.chunk.css": "/dowjones-assignment/static/css/71.9667658b.chunk.css",
+    "static/js/71.53005d64.chunk.js": "/dowjones-assignment/static/js/71.53005d64.chunk.js",
+    "static/css/721.9667658b.chunk.css": "/dowjones-assignment/static/css/721.9667658b.chunk.css",
+    "static/js/721.924009fe.chunk.js": "/dowjones-assignment/static/js/721.924009fe.chunk.js",
     "static/js/466.950e78fe.chunk.js": "/dowjones-assignment/static/js/466.950e78fe.chunk.js",
     "static/js/787.0589973e.chunk.js": "/dowjones-assignment/static/js/787.0589973e.chunk.js",
     "index.html": "/dowjones-assignment/index.html",
     "main.35651317.css.map": "/dowjones-assignment/static/css/main.35651317.css.map",
-    "main.fdb6aecc.js.map": "/dowjones-assignment/static/js/main.fdb6aecc.js.map",
+    "main.0f36f397.js.map": "/dowjones-assignment/static/js/main.0f36f397.js.map",
     "567.64377d5d.chunk.js.map": "/dowjones-assignment/static/js/567.64377d5d.chunk.js.map",
-    "71.71c2f9e9.chunk.js.map": "/dowjones-assignment/static/js/71.71c2f9e9.chunk.js.map",
-    "721.71de7b3d.chunk.js.map": "/dowjones-assignment/static/js/721.71de7b3d.chunk.js.map",
+    "71.9667658b.chunk.css.map": "/dowjones-assignment/static/css/71.9667658b.chunk.css.map",
+    "71.53005d64.chunk.js.map": "/dowjones-assignment/static/js/71.53005d64.chunk.js.map",
+    "721.9667658b.chunk.css.map": "/dowjones-assignment/static/css/721.9667658b.chunk.css.map",
+    "721.924009fe.chunk.js.map": "/dowjones-assignment/static/js/721.924009fe.chunk.js.map",
     "466.950e78fe.chunk.js.map": "/dowjones-assignment/static/js/466.950e78fe.chunk.js.map",
     "787.0589973e.chunk.js.map": "/dowjones-assignment/static/js/787.0589973e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.35651317.css",
-    "static/js/main.fdb6aecc.js"
+    "static/js/main.0f36f397.js"
   ]
 }
