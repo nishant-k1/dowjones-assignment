@@ -5,6 +5,8 @@ import Loader from '../../components/Loader/index';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { FaEdit } from 'react-icons/fa';
+import styles from './index.module.css';
+import { videoLink } from 'views/utils/constants';
 
 const ViewPost = () => {
   const { postId } = useParams();
@@ -22,14 +24,31 @@ const ViewPost = () => {
       {!loading && <Loader height={'2rem'} width={'2rem'} color={'pink'} />}
       {loading && (
         <React.Fragment>
-          <h2>{retrievedPostById.id}</h2>
-          <h3>{retrievedPostById.title}</h3>
-          <p>{retrievedPostById.body}</p>
-          <FaEdit
-            onClick={() => {
-              navigate(`/posts/update/${postId}`, { replace: true });
-            }}
-          />
+          <div className={styles.section}>
+            <iframe
+              className={styles.post}
+              src={videoLink}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            />
+          </div>
+          <div className={styles.section}>
+            <div className={styles.container}>
+              <h2>{retrievedPostById.id}</h2>
+              <h3>{retrievedPostById.title}</h3>
+              <p>{retrievedPostById.body}</p>
+              <button
+                onClick={() => {
+                  // navigate(`/posts/update/${postId}`, { replace: true });
+                  navigate(`/posts`, { replace: true });
+                }}
+              >
+                Back
+              </button>
+            </div>
+          </div>
         </React.Fragment>
       )}
     </div>

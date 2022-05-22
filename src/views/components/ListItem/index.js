@@ -37,7 +37,7 @@ const ListItem = ({ title, body, postId }) => {
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
-        ></iframe>
+        />
       )}
       <div className={styles.subCard}>
         <h3>{title}</h3>

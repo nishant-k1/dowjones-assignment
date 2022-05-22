@@ -23,7 +23,7 @@ const Footer = ({ details }) => {
         </div>
         <div className={styles.nav}>
           <div>
-            <h3>FOLLOW MANSION GLOBAL</h3>
+            <h3>MANSION GLOBAL</h3>
             <Link className={styles.link} to="/create">
               About Mansion Global
             </Link>
@@ -39,7 +39,7 @@ const Footer = ({ details }) => {
           </div>
 
           <div>
-            <h3>FOLLOW MANSION GLOBAL</h3>
+            <h3>GLOBAL PARTNERS</h3>
             <Link className={styles.link} to="/create">
               PropTiger
             </Link>
@@ -58,7 +58,7 @@ const Footer = ({ details }) => {
           </div>
 
           <div>
-            <h3>FOLLOW MANSION GLOBAL</h3>
+            <h3>INDEX</h3>
             <Link className={styles.link} to="/create">
               All Index
             </Link>
