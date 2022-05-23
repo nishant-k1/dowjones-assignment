@@ -25,9 +25,10 @@
 .menus {
   grid-template-columns: 1fr;
   justify-items: start;
-  z-index: 200;
-  width: 100vh;
-  grid-template-rows: repeat(2, min-contnt);
+  align-items: start;
+  height: 100vh;
+  background-color: white;
+  grid-template-rows: repeat(2, min-content);
   row-gap: 1rem;
 }
 
