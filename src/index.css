@@ -16,11 +16,18 @@ code {
     monospace;
 }
 
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #836d3c;
+  border-color: #836d3c;
+}
+
 .page-link {
-  border: rgba(0, 0, 0, 0.902);
+  border: none;
   color: rgba(0, 0, 0, 0.902);
   transition: 0.3s;
-  background-color: #836d3c;
+  background-color: transparent;
 }
 
 a.page-item {
