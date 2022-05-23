@@ -36,10 +36,3 @@ button {
   line-height: 14px;
   color: rgb(149, 131, 89);
 }
-
-.page-item.active .page-link {
-  z-index: 3;
-  color: #fff;
-  background-color: #836d3c;
-  border-color: #836d3c;
-}
