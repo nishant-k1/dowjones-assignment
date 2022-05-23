@@ -5,7 +5,6 @@
 .midSection {
   background-color: antiquewhite;
   padding: 1rem 0;
-  margin: 4rem 0;
 }
 
 .container {
@@ -26,6 +25,11 @@
   width: 100%;
   padding: 2.5rem 0 0 0;
 }
+@media screen and (max-width: 768px) {
+  .post {
+    padding: 0;
+  }
+}
 
 h3 {
   font-family: 'Chronicle Display A', 'Chronicle Display B', serif;
@@ -41,4 +45,18 @@ p {
   font-weight: 400;
   line-height: 26px;
   color: rgb(53, 55, 66);
+}
+
+button {
+  border: 1px solid #a3915f;
+  background-color: #a3915f;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 44px;
+  max-width: 8rem;
+  font-family: Retina, Helvetica, Arial, sans-serif;
+  display: grid;
+  align-items: center;
+  justify-content: center0;
 }

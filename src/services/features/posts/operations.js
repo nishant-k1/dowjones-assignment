@@ -31,9 +31,7 @@ export const createPostThunk = (postValues) => async (dispatch, getState) => {
         payload: { ...res.data },
       });
     }
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 export const updatePostByIdThunk =
@@ -62,9 +60,7 @@ export const updatePostByIdThunk =
           payload: { ...res.data },
         });
       }
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
 export const retrievePostListThunk = () => async (dispatch, getState) => {
@@ -84,9 +80,7 @@ export const retrievePostListThunk = () => async (dispatch, getState) => {
         payload: [...res.data],
       });
     }
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 export const retrievePostByIdThunk = (postId) => async (dispatch, getState) => {
@@ -108,9 +102,7 @@ export const retrievePostByIdThunk = (postId) => async (dispatch, getState) => {
         },
       });
     }
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };
 
 export const deletePostByIdThunk = (postId) => async (dispatch, getState) => {
@@ -132,7 +124,5 @@ export const deletePostByIdThunk = (postId) => async (dispatch, getState) => {
         },
       });
     }
-  } catch (err) {
-    console.log(err);
-  }
+  } catch (err) {}
 };

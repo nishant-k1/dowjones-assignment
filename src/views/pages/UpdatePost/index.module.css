@@ -24,3 +24,17 @@
   line-height: 28px;
   color: rgb(51, 51, 51);
 }
+
+button {
+  border: 1px solid #a3915f;
+  background-color: #a3915f;
+  color: rgb(255, 255, 255);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 44px;
+  max-width: 8rem;
+  font-family: Retina, Helvetica, Arial, sans-serif;
+  display: grid;
+  align-items: center;
+  justify-content: center0;
+}

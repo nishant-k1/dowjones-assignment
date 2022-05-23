@@ -68,8 +68,11 @@
   align-items: start;
 }
 .nav > div > h3 {
-  color: white;
-  margin-bottom: 1rem;
+  color: rgb(255, 255, 255);
+  font-family: 'Whitney SSm A', 'Whitney SSm B', helvetica, arial, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22.5px;
 }
 .nav > div > .link {
   color: white;
