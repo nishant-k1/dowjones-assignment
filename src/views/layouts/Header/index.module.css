@@ -1,9 +1,19 @@
 .section {
   width: 100%;
   height: fit-content;
+  background-color: white;
+  transition: 0.5s;
   border-bottom: 1px solid rgb(238, 238, 238);
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  z-index: 200;
+  background-color: white;
+  width: 100%;
+  transition: 0.5s;
+}
 /* @media only screen and (max-width: 600px) {
   .section {
     display: none;

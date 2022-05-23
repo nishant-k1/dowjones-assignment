@@ -7,12 +7,31 @@ import MobileNav from '../MobileNav';
 
 const Header = () => {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+  const stickyNavElement = React.useRef(null);
+
+  // const [stickyStatus, setStickyStatus] = React.useEffect(false);
+  const [pageYOffset, setPageYOffset] = React.useState(window.pageYOffset);
+
+  const [navbarOffSetTop, setNavbarOffSetTop] = React.useState(0);
 
   React.useEffect(() => {
     window.addEventListener('resize', () => {
       setWindowWidth(window.innerWidth);
     });
   }, []);
+
+  React.useEffect(() => {
+    window.addEventListener('scroll', () => {
+      setPageYOffset(window.pageYOffset);
+      setNavbarOffSetTop(stickyNavElement.current.offsetTop);
+    });
+
+    if (pageYOffset > navbarOffSetTop + 120) {
+      stickyNavElement.current.classList.add(styles.sticky);
+    } else {
+      stickyNavElement.current.classList.remove(styles.sticky);
+    }
+  }, [pageYOffset, navbarOffSetTop]);
 
   return (
     <React.Fragment>
@@ -52,7 +71,15 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <div className={styles.section}>
+          <div
+            ref={stickyNavElement}
+            className={styles.section}
+            // className={
+            //   pageYOffset >= 0
+            //     ? `${styles.section} ${styles.sticky}`
+            //     : styles.section
+            // }
+          >
             <div className={`${styles.container} ${styles.midHeader}`}>
               <h1>
                 mansion <span>global</span>
@@ -72,8 +99,6 @@ const Header = () => {
                 </Link>
               </div>
             </div>
-          </div>
-          <div className={styles.section}>
             <div className={`${styles.container} ${styles.bottomHeader}`}>
               <div>
                 <select name="Buy" id="1">
