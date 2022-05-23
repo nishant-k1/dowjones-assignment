@@ -15,3 +15,31 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.page-link {
+  border: rgba(0, 0, 0, 0.902);
+  color: rgba(0, 0, 0, 0.902);
+  transition: 0.3s;
+  background-color: #836d3c;
+}
+
+a.page-item {
+  border: none;
+  outline: none;
+  background-color: #836d3c;
+}
+
+a.page-link {
+  border: none;
+  color: rgba(0, 0, 0, 0.902);
+  transition: 0.3s;
+  outline: none;
+}
+
+a.page-link:hover {
+  border: none;
+  outline: none;
+  color: #836d3c;
+  transition: 0.3s;
+  background-color: transparent;
+}
