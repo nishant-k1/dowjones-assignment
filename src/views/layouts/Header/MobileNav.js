@@ -25,6 +25,7 @@ const MobileNavMenus = ({ setShowMenu }) => {
           Create Post
         </Link>
       </div>
+      <div></div>
     </div>
   );
 };
@@ -41,7 +42,9 @@ const MobileNav = () => {
       <div className={styles.section}>
         <div className={styles.container}>
           <GiHamburgerMenu className={styles.icon} onClick={handleClick} />
-          <h1>Mansion Global</h1>
+          <h1>
+            mansion <span>global</span>
+          </h1>
           <AiOutlineSearch className={styles.icon} />
         </div>
       </div>
