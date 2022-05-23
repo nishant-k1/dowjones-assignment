@@ -57,7 +57,9 @@ const Home = () => {
     <div className={homeStyles.section}>
       <div className={homeStyles.container}>
         {loading && <List list={currentItems} />}
-        {!loading && <Loader height={'2rem'} width={'2rem'} color={'pink'} />}
+        {!loading && (
+          <Loader height={'2rem'} width={'2rem'} color={'rgb(131, 109, 60)'} />
+        )}
         <ReactPaginate
           breakLabel="..."
           nextLabel="next >"

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './index.module.css';
 import { RiArrowDropDownLine } from 'react-icons/ri';
 import { AiOutlineSearch } from 'react-icons/ai';
-import MobileNav from './MobileNav';
+import MobileNav from '../MobileNav';
 
 const Header = () => {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);

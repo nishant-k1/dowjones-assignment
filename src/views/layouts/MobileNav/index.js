@@ -1,7 +1,7 @@
 import React from 'react';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
-import styles from './MobileNav.module.css';
+import styles from './index.module.css';
 import { Link } from 'react-router-dom';
 
 const MobileNavMenus = ({ setShowMenu }) => {
