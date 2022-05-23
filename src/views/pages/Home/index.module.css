@@ -11,6 +11,13 @@
   padding: 1rem;
   margin: 4rem auto;
 }
+
+.paginate {
+  display: grid;
+  width: 100%;
+  padding: 8rem 0;
+  justify-content: center;
+}
 p {
   font-family: 'Chronicle Display A', 'Chronicle Display B', serif;
   font-weight: 300;
