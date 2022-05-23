@@ -10,28 +10,28 @@ const Header = () => {
   const stickyNavElement = React.useRef(null);
 
   // const [stickyStatus, setStickyStatus] = React.useEffect(false);
-  const [pageYOffset, setPageYOffset] = React.useState(window.pageYOffset);
+  // const [pageYOffset, setPageYOffset] = React.useState(window.pageYOffset);
 
-  const [navbarOffSetTop, setNavbarOffSetTop] = React.useState(0);
+  // const [navbarOffSetTop, setNavbarOffSetTop] = React.useState(26);
 
   React.useEffect(() => {
     window.addEventListener('resize', () => {
       setWindowWidth(window.innerWidth);
     });
-  }, []);
+  }, [windowWidth]);
 
-  React.useEffect(() => {
-    window.addEventListener('scroll', () => {
-      setPageYOffset(window.pageYOffset);
-      setNavbarOffSetTop(stickyNavElement.current.offsetTop);
-    });
+  // React.useEffect(() => {
+  //   window.addEventListener('scroll', () => {
+  //     setPageYOffset(window.pageYOffset);
+  //     setNavbarOffSetTop(stickyNavElement.current.offsetTop);
+  //   });
 
-    if (pageYOffset > navbarOffSetTop + 120) {
-      stickyNavElement.current.classList.add(styles.sticky);
-    } else {
-      stickyNavElement.current.classList.remove(styles.sticky);
-    }
-  }, [pageYOffset, navbarOffSetTop]);
+  //   if (pageYOffset > navbarOffSetTop) {
+  //     stickyNavElement.current.classList.add(styles.sticky);
+  //   } else {
+  //     stickyNavElement.current.classList.remove(styles.sticky);
+  //   }
+  // }, [pageYOffset, navbarOffSetTop]);
 
   return (
     <React.Fragment>

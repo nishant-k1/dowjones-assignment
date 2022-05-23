@@ -34,9 +34,9 @@ const ListItem = ({ title, body, postId }) => {
         <iframe
           src={videoLink}
           title="YouTube video player"
-          frameborder="0"
+          frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         />
       )}
       <div className={styles.subCard}>
