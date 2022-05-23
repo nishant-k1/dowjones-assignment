@@ -1,0 +1,33 @@
+.section {
+  width: 100%;
+  height: fit-content;
+  background-color: white;
+  transition: 0.5s;
+  border-bottom: 1px solid rgb(238, 238, 238);
+}
+
+.container {
+  max-width: 1200px;
+  height: fit-content;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  column-gap: 1rem;
+  row-gap: 2rem;
+}
+h1 {
+  color: #836d3c;
+}
+a {
+  color: black;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #836d3c;
+  transition: 0.3s;
+}
