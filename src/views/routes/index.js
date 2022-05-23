@@ -11,11 +11,11 @@ const ErrorPage = React.lazy(() => import('views/pages/Error'));
 export const routesConfig = [
   {
     path: '/dowjones-assignment',
-    element: <Navigate to="/" replace />,
+    element: <Navigate to="/" replace={true} />,
   },
   {
     path: '/',
-    element: <Navigate to="/posts" replace />,
+    element: <Navigate to="/posts" replace={true} />,
   },
   {
     path: 'posts',
