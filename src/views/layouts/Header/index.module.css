@@ -103,7 +103,7 @@
   content: '';
   position: absolute;
   display: block;
-  top: 2.5rem;
+  top: 16px;
   margin: 0 auto;
   height: 2px;
   background-color: #836d3c;
