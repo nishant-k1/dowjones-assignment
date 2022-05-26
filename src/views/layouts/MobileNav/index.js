@@ -3,6 +3,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import styles from './index.module.css';
 import { Link } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const MobileNavMenus = ({ setShowMenu }) => {
   return (
@@ -25,7 +26,6 @@ const MobileNavMenus = ({ setShowMenu }) => {
           Create Post
         </Link>
       </div>
-      <div></div>
     </div>
   );
 };
@@ -39,7 +39,7 @@ const MobileNav = () => {
 
   return (
     <React.Fragment>
-      <div className={styles.section}>
+      <div>
         <div className={styles.container}>
           <GiHamburgerMenu className={styles.icon} onClick={handleClick} />
           <h1>
